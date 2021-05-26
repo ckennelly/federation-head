@@ -54,6 +54,7 @@ class GitHubProject(ExternalDependency):
 
 PROJECTS = [
     GitHubProject('rules_cc', 'bazelbuild', 'rules_cc'),
+    GitHubProject('rules_fuzzing', 'bazelbuild', 'rules_fuzzing'),
     GitHubProject('rules_python', 'bazelbuild', 'rules_python'),
     GitHubProject('com_google_absl', 'abseil', 'abseil-cpp'),
     GitHubProject('com_google_googletest', 'google', 'googletest'),
