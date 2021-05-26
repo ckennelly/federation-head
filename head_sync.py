@@ -54,7 +54,6 @@ class GitHubProject(ExternalDependency):
 
 PROJECTS = [
     GitHubProject('rules_cc', 'bazelbuild', 'rules_cc'),
-    GitHubProject('rules_fuzzing', 'bazelbuild', 'rules_fuzzing'),
     GitHubProject('rules_python', 'bazelbuild', 'rules_python'),
     GitHubProject('com_google_absl', 'abseil', 'abseil-cpp'),
     GitHubProject('com_google_googletest', 'google', 'googletest'),
@@ -85,5 +84,17 @@ print("      # Use the same URL twice to trick bazel into re-trying if connectio
 print("      urls = [")
 print("          \"https://zlib.net/zlib-1.2.11.tar.gz\",")
 print("          \"https://zlib.net/zlib-1.2.11.tar.gz\"")
+print("      ],")
+print("    )")
+
+print("    # ********** rules_fuzzing (pinned to 0.1.3) *****************")
+print("    http_archive(")
+print("      name = \"rules_fuzzing\",")
+print("      sha256 = \"94f25c7a18db0502ace26a3ef7d0a25fd7c195c4e9770ddd1b1ec718e8936091\",")
+print("      strip_prefix = \"rules_fuzzing-0.1.3\",")
+print("      # Use the same URL twice to trick bazel into re-trying if connection fails")
+print("      urls = [")
+print("          \"https://github.com/bazelbuild/rules_fuzzing/archive/v0.1.3.zip\",")
+print("          \"https://github.com/bazelbuild/rules_fuzzing/archive/v0.1.3.zip\"")
 print("      ],")
 print("    )")

@@ -15,18 +15,6 @@ def federation_deps():
       sha256 = "1e19e9a3bc3d4ee91d7fcad00653485ee6c798efbbf9588d40b34cbfbded143d",
     )
 
-    # ********** rules_fuzzing *****************
-    http_archive(
-      name = "rules_fuzzing",  # 2021-05-19T01:47:21Z
-      urls = [
-           # Use the same URL twice to trick bazel into re-trying if connection fails
-           "https://github.com/bazelbuild/rules_fuzzing/archive/a8e8945bebf4f2a4618b27f127f9fc7009afacff.zip",
-           "https://github.com/bazelbuild/rules_fuzzing/archive/a8e8945bebf4f2a4618b27f127f9fc7009afacff.zip"
-      ],
-      strip_prefix = "rules_fuzzing-a8e8945bebf4f2a4618b27f127f9fc7009afacff",
-      sha256 = "fa5eaec2cea152bfb37e4b36aa3bdf7de6aeed62822dfb931179175fa267e53b",
-    )
-
     # ********** rules_python *****************
     http_archive(
       name = "rules_python",  # 2021-05-25T23:42:32Z
@@ -97,5 +85,16 @@ def federation_deps():
       urls = [
           "https://zlib.net/zlib-1.2.11.tar.gz",
           "https://zlib.net/zlib-1.2.11.tar.gz"
+      ],
+    )
+    # ********** rules_fuzzing (pinned to 0.1.3) *****************
+    http_archive(
+      name = "rules_fuzzing",
+      sha256 = "94f25c7a18db0502ace26a3ef7d0a25fd7c195c4e9770ddd1b1ec718e8936091",
+      strip_prefix = "rules_fuzzing-0.1.3",
+      # Use the same URL twice to trick bazel into re-trying if connection fails
+      urls = [
+          "https://github.com/bazelbuild/rules_fuzzing/archive/v0.1.3.zip",
+          "https://github.com/bazelbuild/rules_fuzzing/archive/v0.1.3.zip"
       ],
     )
