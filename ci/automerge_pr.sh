@@ -100,7 +100,6 @@ for std in ${STD}; do
   /usr/local/bin/bazel test \
     --define absl=1 \
     --distdir="/bazel-distdir" \
-    --build_tag_filters=-manual \
     --test_tag_filters=-benchmark,-no_federation_test \
     --keep_going \
     --show_timestamps \
